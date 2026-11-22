@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="256" height="256" role="img" aria-label="DEV Forge DF monogram">
+  <title>DEV Forge — DF monogram</title>
+  <defs>
+    <clipPath id="weave"><circle cx="45" cy="18" r="7"/><circle cx="36" cy="52.5" r="7"/></clipPath>
+  </defs>
+  <rect width="64" height="64" fill="#F2EBDD"/>
+  <path d="M14 10H28A22 22 0 0 1 28 54H14Z" fill="none" stroke="#24231F" stroke-width="4.5"/>
+  <path d="M36 6V58M36 18H60M36 32H56" fill="none" stroke="#8C302D" stroke-width="4.5"/>
+  <g clip-path="url(#weave)">
+    <path d="M14 10H28A22 22 0 0 1 28 54H14Z" fill="none" stroke="#F2EBDD" stroke-width="9"/>
+    <path d="M14 10H28A22 22 0 0 1 28 54H14Z" fill="none" stroke="#24231F" stroke-width="4.5"/>
+  </g>
+  <rect x="10" y="59" width="12" height="2.5" fill="#647653"/>
+</svg>

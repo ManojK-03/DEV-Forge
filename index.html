@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F2EBDD">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DEV Forge — A Journal for Builders">
+<meta property="og:description" content="Learn, code, build and grow together. A student-led technical community.">
+<meta name="robots" content="index,follow">
+<title>DEV Forge — A Journal for Builders</title>
+<meta name="description" content="DEV Forge is a community of students who learn, code, build and grow together.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div class="reading-progress" id="readingProgress" aria-hidden="true"><span></span></div>
+<div class="df" data-theme="light" id="df">
+
+  <!-- shared SVG defs: monogram weave clip, graph-paper pattern, paper grain -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <clipPath id="dfWeave"><circle cx="45" cy="18" r="7"/><circle cx="36" cy="52.5" r="7"/></clipPath>
+      <pattern id="dfGrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" class="fn sl w1" style="opacity:.55"/></pattern>
+      <filter id="dfNoise" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+    </defs>
+  </svg>
+  <svg class="grain" aria-hidden="true" focusable="false"><rect width="100%" height="100%" filter="url(#dfNoise)"/></svg>
+
+  <!-- custom cursor (hidden on touch / reduced motion) -->
+  <div class="df-cur" id="dfCursor" data-state="default" aria-hidden="true"><i></i><b>VIEW</b></div>
+
+  <!-- publication strip -->
+  <div class="strip">
+    <div class="wrap">
+      <span class="lbl">The DEV Forge Journal &mdash; a publication for builders</span>
+      <span class="lbl">Learn &middot; Code &middot; Build &middot; Grow</span>
+    </div>
+  </div>
+
+  <!-- navigation -->
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="DEV Forge, home">
+        <svg class="mono-df" viewBox="0 0 64 64" role="img" aria-label="DF monogram">
+          <path class="m-d" d="M14 10H28A22 22 0 0 1 28 54H14Z"/>
+          <path class="m-f" d="M36 6V58M36 18H60M36 32H56"/>
+          <g clip-path="url(#dfWeave)"><path class="m-h" d="M14 10H28A22 22 0 0 1 28 54H14Z"/><path class="m-d" d="M14 10H28A22 22 0 0 1 28 54H14Z"/></g>
+          <rect class="m-g" x="10" y="59" width="12" height="2.5"/>
+        </svg>
+        <span class="wm">DEV <em>Forge</em></span>
+      </a>
+      <nav class="nav-links" aria-label="Chapters">
+        <a href="#community">Community</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#journey">Journey</a>
+        <a href="#projects">Projects</a>
+        <a href="#events">Events</a>
+        <a href="#people">People</a>
+      </nav>
+      <div class="theme" role="group" aria-label="Colour theme">
+        <button type="button" data-theme-set="light" aria-pressed="true">Paper</button>
+        <button type="button" data-theme-set="dark" aria-pressed="false">Ink</button>
+      </div>
+      <a class="btn btn-solid" href="#join" data-cursor="button">Join the Club <span aria-hidden="true">&rarr;</span></a>
+      <details class="m-menu">
+        <summary class="lbl" aria-label="Open navigation menu">Menu <span aria-hidden="true">＋</span></summary>
+        <div class="m-panel">
+          <a href="#community">01 Community</a>
+          <a href="#expertise">02 Expertise</a>
+          <a href="#journey">03 Journey</a>
+          <a href="#projects">04 Projects</a>
+          <a href="#events">05 Events</a>
+          <a href="#people">06 People</a>
+          <a href="#join">07 Join the Club</a>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <main id="top" tabindex="-1">
+
+  <!-- ================= HERO / COVER ================= -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="pubrow a a1"><span class="pub-tag">VOL. 01 / EST. 2026</span><span class="lbl">The Cover Story</span></div>
+          <h1 id="hero-title" class="a a2">The Art of <em>Building</em> <span class="mark">What Matters.</span></h1>
+          <p class="lede a a3">DEV Forge is a community of students who learn, code, build and grow together &mdash; from a first line of code to a first merged pull request, and everything that comes after.</p>
+          <div class="cta-row a a4">
+            <a class="btn btn-solid" href="#community" data-cursor="button">Explore DEV Forge <span aria-hidden="true">&rarr;</span></a>
+            <a class="btn" href="#join" data-cursor="button">Become a Member <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <div class="term a a5" data-cursor="code">
+            <div class="term-bar"><span class="lbl">Fig. 2 &mdash; intro.sh</span><span class="term-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+            <pre><span class="tl"><span class="p">$</span> devforge --welcome
+</span><span class="tl">  learning ........ <span class="ok">always</span>
+</span><span class="tl">  coding .......... <span class="ok">daily</span>
+</span><span class="tl">  building ........ <span class="ok">together</span>
+</span><span class="tl">  growing ......... <span class="ok">yes</span>
+</span><span class="tl"><span class="p">$</span> <span class="caret"></span></span></pre>
+            <span class="hw term-note" aria-hidden="true">press any key &#8599;</span>
+          </div>
+        </div>
+
+        <figure class="plate-fig a a3">
+          <div class="plate on-card">
+            <svg class="plate-svg" viewBox="0 0 520 620" role="img" aria-label="Illustration on graph paper: a compass drawing a circle, a window of code and a terminal, with handwritten notes">
+              <rect width="520" height="620" fill="url(#dfGrid)"/>
+              <!-- registration marks -->
+              <g class="fn si w1"><circle cx="20" cy="20" r="6"/><path d="M8 20H32M20 8V32"/><circle cx="500" cy="20" r="6"/><path d="M488 20H512M500 8V32"/><circle cx="20" cy="600" r="6"/><path d="M8 600H32M20 588V612"/><circle cx="500" cy="600" r="6"/><path d="M488 600H512M500 588V612"/></g>
+              <text x="48" y="30" class="t10 fm">FIG. 1</text>
+              <!-- construction circle -->
+              <circle cx="290" cy="250" r="150" class="fn sl w1 d1"/>
+              <circle cx="290" cy="250" r="96" class="fn sl w1"/>
+              <path d="M110 250H470M290 70V430" class="fn sl w1"/>
+              <path d="M290 250L386 135" class="fn si w15"/>
+              <text x="348" y="204" class="t11 fi">r</text>
+              <circle cx="290" cy="250" r="3.5" class="fi sn"/>
+              <path class="arc fn sr w3 rc" d="M386 135A150 150 0 0 1 440 250"/>
+              <!-- Interactive compass: drag the hinge to rotate the drawing tool. -->
+              <g id="compassRotor" class="compass-rotor" transform="rotate(0 217 91)">
+                <path d="M217 91L290 250" class="fn si w3 rc"/>
+                <path d="M217 91L386 135" class="fn si w3 rc"/>
+                <path d="M217 91V56" class="fn si w3 rc"/>
+                <circle cx="217" cy="50" r="6" class="fb si w2"/>
+                <circle cx="217" cy="91" r="7" class="fc si w2"/>
+                <circle cx="386" cy="135" r="3.5" class="fr sn"/>
+              </g>
+              <circle id="compassHandle" class="compass-handle" cx="217" cy="91" r="22"
+                role="slider" tabindex="0" aria-label="Rotate the compass" aria-valuemin="-180"
+                aria-valuemax="180" aria-valuenow="0" aria-valuetext="0 degrees"
+                data-cursor="button"/>
+              <text x="48" y="270" class="t10 fm compass-hint" aria-hidden="true">DRAG THE HINGE TO ROTATE</text>
+              <!-- geometry sketch -->
+              <path d="M52 232L128 232L90 168Z" class="fn sg w2 rc"/>
+              <path d="M52 232L90 168" class="fn sg w1"/>
+              <rect x="138" y="118" width="22" height="22" transform="rotate(45 149 129)" class="fh sn"/>
+              <path d="M40 150C40 128 62 112 90 112" class="fn si w1 d1"/>
+              <!-- ink blot + accents -->
+              <path d="M452 62C440 46 462 28 484 34C506 40 508 66 494 78C480 90 462 80 452 62Z" class="fr sn" style="opacity:.92"/>
+              <circle cx="478" cy="190" r="5" class="fg sn"/>
+              <circle cx="498" cy="170" r="2.5" class="fg sn"/>
+              <!-- code window -->
+              <rect x="24" y="300" width="230" height="150" class="fc si w15"/>
+              <path d="M24 322H254" class="fn si w1"/>
+              <circle cx="38" cy="311" r="3.5" class="fn si w1"/><circle cx="52" cy="311" r="3.5" class="fn si w1"/><circle cx="66" cy="311" r="3.5" class="fn si w1"/>
+              <text x="86" y="315" class="t10 fm">forge.js</text>
+              <text x="34" y="345" class="t11 fm">1</text><text x="54" y="345" class="t11"><tspan class="fr">const</tspan><tspan class="fi"> idea = sketch();</tspan></text>
+              <text x="34" y="364" class="t11 fm">2</text><text x="54" y="364" class="t11"><tspan class="fr">const</tspan><tspan class="fi"> plan = refine(idea);</tspan></text>
+              <text x="34" y="383" class="t11 fm">3</text><text x="54" y="383" class="t11 fi">build(plan).then(ship);</text>
+              <text x="34" y="402" class="t11 fm">4</text><text x="54" y="402" class="t11 fgt">// learn. code. repeat.</text>
+              <text x="34" y="421" class="t11 fm">5</text><rect x="54" y="411" width="7" height="13" class="fi blk"/>
+              <!-- dimension line -->
+              <path d="M24 470H254M24 463V477M254 463V477M24 470L32 466M24 470L32 474M254 470L246 466M254 470L246 474" class="fn si w1"/>
+              <text x="139" y="463" text-anchor="middle" class="t10 fi">w = 230</text>
+              <!-- braces -->
+              <text x="26" y="590" class="ol">{ }</text>
+              <!-- terminal (with offset print shadow) -->
+              <rect x="277" y="447" width="230" height="130" class="fr sn"/>
+              <rect x="270" y="440" width="230" height="130" class="fi sn"/>
+              <circle cx="284" cy="454" r="3" class="fb sn"/><circle cx="297" cy="454" r="3" class="fb sn"/><circle cx="310" cy="454" r="3" class="fb sn"/>
+              <path d="M270 464H500" class="fn sl w1" style="opacity:.6"/>
+              <text x="284" y="483" class="t11 fb">$ mkdir forge &amp;&amp; cd forge</text>
+              <text x="284" y="500" class="t11 fb">$ git init</text>
+              <text x="284" y="517" class="t11 fb" style="opacity:.7">Initialized empty repo.</text>
+              <text x="284" y="534" class="t11 fb">$ echo 'hello, world'</text>
+              <text x="284" y="551" class="t11 fb" style="opacity:.7">hello, world</text>
+              <text x="284" y="566" class="t11 fb">$</text><rect x="296" y="556" width="7" height="12" class="fb blk"/>
+              <!-- handwritten annotations -->
+              <text x="326" y="46" class="hws fr" transform="rotate(-4 326 46)">start with a circle</text>
+              <path d="M320 52C296 58 262 68 236 82M236 82L246 74M236 82L248 84" class="fn sr w15 rc"/>
+              <text x="34" y="284" class="hws fr" transform="rotate(-2 34 284)">sketch &#8594; code &#8594; ship</text>
+              <text x="290" y="604" class="hws fi" transform="rotate(2 290 604)">then make it run</text>
+            </svg>
+          </div>
+          <figcaption><span class="cap">Fig. 1 &mdash; The workbench: sketch, compile, repeat.</span><span class="lbl">Plate I</span></figcaption>
+        </figure>
+      </div>
+    </div>
+    <nav class="toc" aria-label="In this issue">
+      <div class="wrap">
+        <span class="lbl">In this issue</span>
+        <ol>
+          <li><a class="ul" href="#community"><b>01</b>Community</a></li>
+          <li><a class="ul" href="#expertise"><b>02</b>Expertise</a></li>
+          <li><a class="ul" href="#journey"><b>03</b>Journey</a></li>
+          <li><a class="ul" href="#projects"><b>04</b>Projects</a></li>
+          <li><a class="ul" href="#events"><b>05</b>Events</a></li>
+          <li><a class="ul" href="#people"><b>06</b>People</a></li>
+          <li><a class="ul" href="#join"><b>07</b>Membership</a></li>
+        </ol>
+      </div>
+    </nav>
+  </section>
+
+  <!-- ================= 01 THE COMMUNITY ================= -->
+  <section id="community" class="chap" aria-labelledby="c1-title">
+    <div class="wrap">
+      <header class="chap-head rv"><span class="lbl chap-no">01 / The Community</span><span class="lbl">P. 003</span></header>
+      <div class="c1-grid">
+        <div class="c1-left rv">
+          <h2 id="c1-title" class="chap-title">A workshop for people who <em>make things.</em></h2>
+          <span class="hw" aria-hidden="true">everyone starts somewhere &#8599;</span>
+        </div>
+        <div class="c1-right rv">
+          <p class="dropcap">DEV Forge runs on a simple belief: the best way to learn software is to make something with other people. We gather to study the fundamentals, write code side by side, and turn half-finished ideas into things that actually run.</p>
+          <p>Everyone is welcome at the bench &mdash; whether you are writing your first loop or reviewing your fortieth pull request. Beginners learn from builders, builders learn by teaching, and every project gets a second pair of eyes.</p>
+          <blockquote class="pull" style="margin-left:0;margin-right:0">&ldquo;Learn it on paper. Write it in code. Ship it with friends.&rdquo;</blockquote>
+        </div>
+      </div>
+      <ul class="pillars rv">
+        <li><span class="lbl">i.</span><h3>Learn</h3><p>Structured study across algorithms, the web, programming and AI.</p></li>
+        <li><span class="lbl">ii.</span><h3>Code</h3><p>Regular practice sessions and problem-solving evenings.</p></li>
+        <li><span class="lbl">iii.</span><h3>Build</h3><p>Team projects that travel from first sketch to deployed product.</p></li>
+        <li><span class="lbl">iv.</span><h3>Grow</h3><p>Mentorship, open source and preparation for internships.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= 02 AREAS OF EXPERTISE ================= -->
+  <section id="expertise" class="chap chap-alt" aria-labelledby="c2-title">
+    <div class="wrap">
+      <header class="chap-head rv"><span class="lbl chap-no">02 / Areas of Expertise</span><span class="lbl">P. 005</span></header>
+      <h2 id="c2-title" class="chap-title rv" style="margin-bottom:clamp(28px,4vw,56px)">Six disciplines, <em>one workshop.</em></h2>
+      <div class="dom-grid rv">
+
+        <article class="dom">
+          <div class="dom-top"><span class="dom-no" aria-hidden="true">01</span>
+            <svg class="dom-sym sym" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="8" r="4" class="sr"/><circle cx="12" cy="26" r="4"/><circle cx="36" cy="26" r="4"/><circle cx="6" cy="42" r="3"/><circle cx="18" cy="42" r="3"/><circle cx="30" cy="42" r="3"/><circle cx="42" cy="42" r="3"/><path d="M21 11L14 23M27 11L34 23M10 29L7 39M14 29L17 39M33 29L30 39M39 29L41 39"/></svg></div>
+          <span class="lbl">Domain 01</span>
+          <h3>Data Structures &amp; Algorithms</h3>
+          <p>Learn to think in structures. We move from arrays and linked lists to trees and graphs, reasoning on paper before touching the keyboard.</p>
+          <div class="tags"><span class="tag">Arrays</span><span class="tag">Trees</span><span class="tag">Graphs</span><span class="tag">Dynamic programming</span><span class="tag">Big-O</span></div>
+          <div class="dom-foot"><a class="ul" href="#journey">Explore DSA</a><span class="lbl" aria-hidden="true">&rarr;</span></div>
+        </article>
+
+        <article class="dom">
+          <div class="dom-top"><span class="dom-no" aria-hidden="true">02</span>
+            <svg class="dom-sym sym" viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="8" width="40" height="32"/><path d="M4 17H44"/><circle cx="9" cy="12.5" r="1" class="sr"/><circle cx="14" cy="12.5" r="1"/><path d="M19 25L14 29L19 33M29 25L34 29L29 33M26 23L22 35" class="sr"/></svg></div>
+          <span class="lbl">Domain 02</span>
+          <h3>Web Development</h3>
+          <p>Build for the browser, end to end: semantic markup, considered styling, and the servers and databases that sit quietly behind them.</p>
+          <div class="tags"><span class="tag">HTML &amp; CSS</span><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">SQL</span></div>
+          <div class="dom-foot"><a class="ul" href="#journey">Explore Web</a><span class="lbl" aria-hidden="true">&rarr;</span></div>
+        </article>
+
+        <article class="dom">
+          <div class="dom-top"><span class="dom-no" aria-hidden="true">03</span>
+            <svg class="dom-sym sym" viewBox="0 0 48 48" aria-hidden="true"><path d="M18 8C11 8 14 22 7 24C14 26 11 40 18 40M30 8C37 8 34 22 41 24C34 26 37 40 30 40"/><circle cx="24" cy="24" r="2.2" class="sr"/></svg></div>
+          <span class="lbl">Domain 03</span>
+          <h3>Programming</h3>
+          <p>The craft beneath every framework. Core languages, version control and the command line, practised until they feel like second nature.</p>
+          <div class="tags"><span class="tag">C++</span><span class="tag">Python</span><span class="tag">Java</span><span class="tag">Git</span><span class="tag">Linux</span></div>
+          <div class="dom-foot"><a class="ul" href="#journey">Explore Programming</a><span class="lbl" aria-hidden="true">&rarr;</span></div>
+        </article>
+
+        <article class="dom">
+          <div class="dom-top"><span class="dom-no" aria-hidden="true">04</span>
+            <svg class="dom-sym sym" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="16" width="36" height="24"/><path d="M18 16V10H30V16M6 27H42"/><rect x="21" y="24" width="6" height="6" class="sr"/></svg></div>
+          <span class="lbl">Domain 04</span>
+          <h3>Internship Preparation</h3>
+          <p>Turn skills into offers. R&eacute;sum&eacute; reviews, mock interviews, aptitude practice and portfolio projects that show how you think.</p>
+          <div class="tags"><span class="tag">R&eacute;sum&eacute;s</span><span class="tag">Mock interviews</span><span class="tag">Aptitude</span><span class="tag">Portfolios</span></div>
+          <div class="dom-foot"><a class="ul" href="#journey">Explore Internships</a><span class="lbl" aria-hidden="true">&rarr;</span></div>
+        </article>
+
+        <article class="dom">
+          <div class="dom-top"><span class="dom-no" aria-hidden="true">05</span>
+            <svg class="dom-sym sym" viewBox="0 0 48 48" aria-hidden="true"><circle cx="14" cy="10" r="4"/><circle cx="14" cy="38" r="4"/><circle cx="35" cy="18" r="4" class="sr"/><path d="M14 14V34M35 22C35 30 14 28 14 34"/></svg></div>
+          <span class="lbl">Domain 05</span>
+          <h3>Open Source</h3>
+          <p>Read real code, fix real issues, and learn the etiquette of collaboration &mdash; from your first fork to a merged pull request.</p>
+          <div class="tags"><span class="tag">Git &amp; GitHub</span><span class="tag">Pull requests</span><span class="tag">Code review</span><span class="tag">Docs</span></div>
+          <div class="dom-foot"><a class="ul" href="#projects">Explore Open Source</a><span class="lbl" aria-hidden="true">&rarr;</span></div>
+        </article>
+
+        <article class="dom">
+          <div class="dom-top"><span class="dom-no" aria-hidden="true">06</span>
+            <svg class="dom-sym sym" viewBox="0 0 48 48" aria-hidden="true"><circle cx="8" cy="14" r="3"/><circle cx="8" cy="34" r="3"/><circle cx="24" cy="8" r="3"/><circle cx="24" cy="24" r="3" class="sr"/><circle cx="24" cy="40" r="3"/><circle cx="40" cy="24" r="3"/><path d="M11 14L21 8M11 14L21 24M11 34L21 24M11 34L21 40M27 8L37 24M27 24H37M27 40L37 24"/></svg></div>
+          <span class="lbl">Domain 06</span>
+          <h3>Artificial Intelligence</h3>
+          <p>From classical machine learning to modern language models: understand the maths, train small models, and build applications on top.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">scikit-learn</span><span class="tag">PyTorch</span><span class="tag">LLMs</span></div>
+          <div class="dom-foot"><a class="ul" href="#journey">Explore AI</a><span class="lbl" aria-hidden="true">&rarr;</span></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 03 THE LEARNING JOURNEY ================= -->
+  <section id="journey" class="chap" aria-labelledby="c3-title">
+    <div class="wrap">
+      <header class="chap-head rv"><span class="lbl chap-no">03 / The Learning Journey</span><span class="lbl">P. 008</span></header>
+      <div class="c3-grid">
+        <div class="c3-side rv">
+          <h2 id="c3-title" class="chap-title">Five stages, <em>annotated.</em></h2>
+          <p>A field guide for the road from curious beginner to confident builder. Move at your own pace; every stage ends in something you can show.</p>
+          <span class="hw" aria-hidden="true">notes in the margin &#8594;</span>
+        </div>
+        <ol class="stages">
+
+          <li class="stage rv">
+            <div class="stage-no" aria-hidden="true">I</div>
+            <div class="stage-body">
+              <div class="stage-top"><span class="lbl">Stage 01 / 05</span><span class="prog" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+              <h3>Foundations</h3>
+              <p>Learn how a computer thinks. Variables, loops, functions and logic in one language, plus the terminal and Git.</p>
+              <div class="stage-cols">
+                <div><div class="lbl">Skills</div><div class="tags"><span class="tag">Logic</span><span class="tag">Syntax</span><span class="tag">Terminal</span><span class="tag">Git basics</span></div></div>
+                <div><div class="lbl">Milestone</div><p class="mile"><i></i><span>Ship a first command-line program.</span></p></div>
+              </div>
+            </div>
+            <div class="stage-fig"><svg viewBox="0 0 120 70" class="sym" aria-hidden="true"><circle cx="18" cy="35" r="5" class="fr sn"/><path d="M26 35H104M96 27L106 35L96 43" class="sr"/></svg><span class="hw">start here</span></div>
+          </li>
+
+          <li class="stage rv">
+            <div class="stage-no" aria-hidden="true">II</div>
+            <div class="stage-body">
+              <div class="stage-top"><span class="lbl">Stage 02 / 05</span><span class="prog" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+              <h3>Core Skills</h3>
+              <p>Pair deliberate practice with fundamentals: arrays, recursion and complexity on one side; HTML, CSS and JavaScript on the other.</p>
+              <div class="stage-cols">
+                <div><div class="lbl">Skills</div><div class="tags"><span class="tag">DSA basics</span><span class="tag">Recursion</span><span class="tag">HTML &amp; CSS</span><span class="tag">JavaScript</span></div></div>
+                <div><div class="lbl">Milestone</div><p class="mile"><i></i><span>Solve problems without hints and publish a personal site.</span></p></div>
+              </div>
+            </div>
+            <div class="stage-fig"><svg viewBox="0 0 120 70" class="sym" aria-hidden="true"><rect x="22" y="48" width="76" height="12"/><rect x="32" y="33" width="56" height="12"/><rect x="42" y="18" width="36" height="12" class="sr"/></svg><span class="hw">the long middle</span></div>
+          </li>
+
+          <li class="stage rv">
+            <div class="stage-no" aria-hidden="true">III</div>
+            <div class="stage-body">
+              <div class="stage-top"><span class="lbl">Stage 03 / 05</span><span class="prog" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+              <h3>Build</h3>
+              <p>Move from exercises to products. Plan, design and deploy full applications with a front end, a back end and a database.</p>
+              <div class="stage-cols">
+                <div><div class="lbl">Skills</div><div class="tags"><span class="tag">React</span><span class="tag">APIs</span><span class="tag">Databases</span><span class="tag">Deployment</span></div></div>
+                <div><div class="lbl">Milestone</div><p class="mile"><i></i><span>Deploy a project that someone else uses.</span></p></div>
+              </div>
+            </div>
+            <div class="stage-fig"><svg viewBox="0 0 120 70" class="sym" aria-hidden="true"><rect x="14" y="36" width="26" height="22"/><rect x="47" y="36" width="26" height="22"/><rect x="80" y="36" width="26" height="22"/><rect x="47" y="8" width="26" height="22" class="sr" transform="rotate(-6 60 19)"/></svg><span class="hw">ship it!</span></div>
+          </li>
+
+          <li class="stage rv">
+            <div class="stage-no" aria-hidden="true">IV</div>
+            <div class="stage-body">
+              <div class="stage-top"><span class="lbl">Stage 04 / 05</span><span class="prog" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div>
+              <h3>Collaborate</h3>
+              <p>Work the way real teams work: branches, reviews, issues and shared ownership &mdash; inside the club and in open source.</p>
+              <div class="stage-cols">
+                <div><div class="lbl">Skills</div><div class="tags"><span class="tag">Pull requests</span><span class="tag">Code review</span><span class="tag">Agile habits</span><span class="tag">Open source</span></div></div>
+                <div><div class="lbl">Milestone</div><p class="mile"><i></i><span>Get a first pull request merged.</span></p></div>
+              </div>
+            </div>
+            <div class="stage-fig"><svg viewBox="0 0 120 70" class="sym" aria-hidden="true"><path d="M10 50H110"/><path d="M34 50C34 28 56 28 56 18H84" class="sr"/><circle cx="34" cy="50" r="4"/><circle cx="84" cy="18" r="4" class="sr"/><circle cx="96" cy="50" r="4"/><path d="M84 22C84 36 96 36 96 46" class="sr"/></svg><span class="hw">push &amp; hope</span></div>
+          </li>
+
+          <li class="stage rv">
+            <div class="stage-no" aria-hidden="true">V</div>
+            <div class="stage-body">
+              <div class="stage-top"><span class="lbl">Stage 05 / 05</span><span class="prog" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+              <h3>Launch</h3>
+              <p>Prepare for interviews and internships, and share what you know. The best way to master a topic is to teach it.</p>
+              <div class="stage-cols">
+                <div><div class="lbl">Skills</div><div class="tags"><span class="tag">Interviews</span><span class="tag">Portfolio</span><span class="tag">System thinking</span><span class="tag">Mentoring</span></div></div>
+                <div><div class="lbl">Milestone</div><p class="mile"><i></i><span>Mentor someone through Stage I.</span></p></div>
+              </div>
+            </div>
+            <div class="stage-fig"><svg viewBox="0 0 120 70" class="sym" aria-hidden="true"><path d="M10 60H34V46H58V32H82V18H106"/><path d="M106 18V4L120 8L106 12" class="sr"/></svg><span class="hw">pay it forward</span></div>
+          </li>
+
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 04 SELECTED PROJECTS ================= -->
+  <section id="projects" class="chap chap-alt" aria-labelledby="c4-title">
+    <div class="wrap">
+      <header class="chap-head rv"><span class="lbl chap-no">04 / Selected Projects</span><span class="lbl">P. 011</span></header>
+      <h2 id="c4-title" class="chap-title rv" style="margin-bottom:clamp(28px,4vw,56px)">From the <em>workshop floor.</em></h2>
+      <div class="proj-grid">
+
+        <article class="proj proj-a rv" data-cursor="view">
+          <div class="proj-plate on-card">
+            <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="600" height="400" class="f2 sn"/>
+              <path d="M0 80H600M0 160H600M0 240H600M0 320H600M100 0V400M220 0V400M340 0V400M460 0V400" class="fn sl w1"/>
+              <rect x="222" y="162" width="116" height="76" class="fg sn" style="opacity:.35"/>
+              <rect x="342" y="242" width="116" height="76" class="fh sn" style="opacity:.45"/>
+              <path d="M60 340C140 330 140 250 220 240S340 180 400 120S520 90 540 60" class="fn sr w3 d2 rc"/>
+              <circle cx="60" cy="340" r="9" class="fc si w2"/>
+              <circle cx="540" cy="60" r="11" class="fr sn"/><circle cx="540" cy="60" r="4" class="fc sn"/>
+              <circle cx="64" cy="64" r="26" class="fc si w1"/><path d="M64 44L58 64H70ZM64 84L58 64H70Z" class="fi sn"/><text x="64" y="38" text-anchor="middle" class="t10 fi">N</text>
+              <text x="236" y="206" class="t11 fm">GREEN</text><text x="356" y="286" class="t11 fm">HALL</text>
+            </svg>
+          </div>
+          <div class="proj-meta"><span class="lbl">No. 01</span><span class="lbl">Web &middot; Maps</span></div>
+          <h3>Campus Compass</h3>
+          <p>A map-based web app for finding study rooms, clubs and events around campus, with routes drawn the way you would sketch them on paper.</p>
+          <div class="proj-foot"><div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span></div><a class="ul" href="#">GitHub &#8599;</a></div>
+        </article>
+
+        <article class="proj proj-b rv" data-cursor="view">
+          <div class="proj-plate on-card">
+            <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="600" height="400" class="f2 sn"/>
+              <rect x="60" y="50" width="480" height="300" class="fi sn"/>
+              <circle cx="84" cy="74" r="5" class="fb sn"/><circle cx="104" cy="74" r="5" class="fb sn"/><circle cx="124" cy="74" r="5" class="fb sn"/>
+              <path d="M60 96H540" class="fn sl w1"/>
+              <text x="88" y="136" class="t14 fb">$ forge new my-project</text>
+              <text x="88" y="168" class="t14 fh">&#10003; created my-project/</text>
+              <text x="88" y="200" class="t14 fb">+-- src/</text>
+              <text x="88" y="228" class="t14 fb">+-- README.md</text>
+              <text x="88" y="256" class="t14 fb">+-- .github/</text>
+              <text x="88" y="298" class="t14 fb">$</text><rect x="106" y="284" width="9" height="18" class="fb blk"/>
+              <rect x="470" y="300" width="54" height="30" class="fr sn" transform="rotate(-8 497 315)"/>
+            </svg>
+          </div>
+          <div class="proj-meta"><span class="lbl">No. 02</span><span class="lbl">Tooling &middot; CLI</span></div>
+          <h3>Forge CLI</h3>
+          <p>A command-line scaffolding tool that sets up club project templates in a single command.</p>
+          <div class="proj-foot"><div class="tags"><span class="tag">Python</span><span class="tag">CLI</span><span class="tag">GitHub Actions</span></div><a class="ul" href="#">GitHub &#8599;</a></div>
+        </article>
+
+        <article class="proj proj-c rv" data-cursor="view">
+          <div class="proj-plate on-card">
+            <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="600" height="400" class="f2 sn"/>
+              <path d="M60 330H540" class="fn si w2"/>
+              <rect x="80" y="230" width="34" height="100" class="fi sn"/>
+              <rect x="130" y="180" width="34" height="150" class="fi sn"/>
+              <rect x="180" y="260" width="34" height="70" class="fi sn"/>
+              <rect x="230" y="120" width="34" height="210" class="fr sn"/>
+              <rect x="280" y="150" width="34" height="180" class="fr sn"/>
+              <rect x="330" y="210" width="34" height="120" class="fi sn"/>
+              <rect x="380" y="90" width="34" height="240" class="fi sn"/>
+              <rect x="430" y="200" width="34" height="130" class="fi sn"/>
+              <rect x="480" y="250" width="34" height="80" class="fi sn"/>
+              <path d="M247 100C262 66 298 66 297 126" class="fn sr w2 rc"/><path d="M297 126L290 114M297 126L309 118" class="fn sr w2 rc"/>
+              <text x="236" y="64" class="t11 fi">swap</text>
+              <circle cx="470" cy="70" r="6" class="fn sg w2"/><circle cx="530" cy="46" r="6" class="fn sg w2"/><circle cx="520" cy="110" r="6" class="fn sg w2"/><path d="M475 67L524 49M474 74L515 105M527 52L522 104" class="fn sg w1"/>
+            </svg>
+          </div>
+          <div class="proj-meta"><span class="lbl">No. 03</span><span class="lbl">Learning &middot; DSA</span></div>
+          <h3>Algo Atlas</h3>
+          <p>An interactive visual encyclopedia of data structures and algorithms, built so you can watch a sort happen.</p>
+          <div class="proj-foot"><div class="tags"><span class="tag">JavaScript</span><span class="tag">Canvas</span><span class="tag">DSA</span></div><a class="ul" href="#">GitHub &#8599;</a></div>
+        </article>
+
+        <article class="proj proj-d rv" data-cursor="view">
+          <div class="proj-plate on-card">
+            <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="600" height="400" class="f2 sn"/>
+              <rect x="150" y="90" width="260" height="170" class="fc si w15" transform="rotate(-7 280 175)"/>
+              <rect x="170" y="110" width="260" height="170" class="fc si w15" transform="rotate(-2 300 195)"/>
+              <rect x="190" y="130" width="260" height="170" class="fc si w15"/>
+              <path d="M214 168H400M214 196H372M214 224H388" class="fn si w1"/>
+              <rect x="214" y="250" width="70" height="24" class="fr sn"/>
+              <circle cx="500" cy="110" r="7" class="fg sn"/><circle cx="540" cy="170" r="7" class="fg sn"/><circle cx="500" cy="230" r="7" class="fg sn"/><circle cx="560" cy="250" r="7" class="fr sn"/>
+              <path d="M500 110L540 170M540 170L500 230M540 170L560 250M500 230L560 250" class="fn sg w1"/>
+              <text x="80" y="340" class="t12 fm">flashcards, from your notes</text>
+            </svg>
+          </div>
+          <div class="proj-meta"><span class="lbl">No. 04</span><span class="lbl">AI &middot; Study tools</span></div>
+          <h3>Notebook AI</h3>
+          <p>A study assistant that turns lecture notes into summaries and flashcards, with every answer traced back to the page it came from.</p>
+          <div class="proj-foot"><div class="tags"><span class="tag">Python</span><span class="tag">NLP</span><span class="tag">FastAPI</span></div><a class="ul" href="#">GitHub &#8599;</a></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 05 EVENTS & WORKSHOPS ================= -->
+  <section id="events" class="chap" aria-labelledby="c5-title" style="--notch:var(--bg)">
+    <div class="wrap">
+      <header class="chap-head rv"><span class="lbl chap-no">05 / Events &amp; Workshops</span><span class="lbl">P. 014</span></header>
+      <h2 id="c5-title" class="chap-title rv" style="margin-bottom:clamp(28px,4vw,56px)">Notices &amp; <em>announcements.</em></h2>
+      <div class="ev-grid">
+
+        <article class="poster p-red rv">
+          <div class="p-top"><span class="lbl">No. 01</span><span class="lbl">Vol. 01</span></div>
+          <span class="p-kind">Workshop</span>
+          <h3>Git &amp; GitHub from Zero</h3>
+          <div class="orn" aria-hidden="true"><i></i></div>
+          <p>Branches, commits and your very first pull request, built live and step by step.</p>
+          <div class="perf" aria-hidden="true"></div>
+          <dl class="p-dl"><div><dt>Date</dt><dd>[DATE TBA]</dd></div><div><dt>Time</dt><dd>[00:00]</dd></div><div><dt>Venue</dt><dd>[VENUE]</dd></div></dl>
+          <a class="p-link" href="#join">Reserve a seat</a>
+        </article>
+
+        <article class="poster p-ink rv">
+          <div class="p-top"><span class="lbl">No. 02</span><span class="lbl">Vol. 01</span></div>
+          <span class="p-kind">Weekly session</span>
+          <h3>Algorithm Evenings</h3>
+          <div class="orn" aria-hidden="true"><i></i></div>
+          <p>Pick a problem, think on paper, then code. Solutions are discussed together, never just shown.</p>
+          <div class="perf" aria-hidden="true"></div>
+          <dl class="p-dl"><div><dt>Day</dt><dd>[DAY]</dd></div><div><dt>Time</dt><dd>[00:00]</dd></div><div><dt>Venue</dt><dd>[VENUE]</dd></div></dl>
+          <a class="p-link" href="#join">Join the evenings</a>
+        </article>
+
+        <article class="poster p-gold rv">
+          <div class="p-top"><span class="lbl">No. 03</span><span class="lbl">Vol. 01</span></div>
+          <span class="p-kind">Hackathon</span>
+          <h3>Forge Night</h3>
+          <div class="orn" aria-hidden="true"><i></i></div>
+          <p>Form a team, choose a brief and build a working prototype in a single sitting.</p>
+          <div class="perf" aria-hidden="true"></div>
+          <dl class="p-dl"><div><dt>Date</dt><dd>[DATE TBA]</dd></div><div><dt>Time</dt><dd>[00:00]</dd></div><div><dt>Venue</dt><dd>[VENUE]</dd></div></dl>
+          <a class="p-link" href="#join">Form a team</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 06 THE PEOPLE ================= -->
+  <section id="people" class="chap chap-alt" aria-labelledby="c6-title">
+    <div class="wrap">
+      <header class="chap-head rv"><span class="lbl chap-no">06 / The People</span><span class="lbl">P. 016</span></header>
+      <div class="c6-grid">
+        <div class="c6-side rv">
+          <h2 id="c6-title" class="chap-title">The <em>masthead.</em></h2>
+          <p>Every journal has its editors. These are the people who set the agenda, run the sessions and keep the workshop lights on.</p>
+          <span class="hw" aria-hidden="true">your name could be here &#8599;</span>
+        </div>
+        <ul class="mast rv">
+          <li><span class="avatar" aria-hidden="true">F</span><div><div class="nm">[FULL NAME]</div><div class="role">Editor-in-Chief &middot; President</div></div><div class="lbl dom-l">Vision &amp; direction</div></li>
+          <li><span class="avatar" aria-hidden="true">F</span><div><div class="nm">[FULL NAME]</div><div class="role">Managing Editor &middot; Vice President</div></div><div class="lbl dom-l">Operations</div></li>
+          <li><span class="avatar" aria-hidden="true">F</span><div><div class="nm">[FULL NAME]</div><div class="role">Technical Editor &middot; Tech Lead</div></div><div class="lbl dom-l">DSA &amp; programming</div></li>
+          <li><span class="avatar" aria-hidden="true">F</span><div><div class="nm">[FULL NAME]</div><div class="role">Features Editor &middot; Events Lead</div></div><div class="lbl dom-l">Workshops &amp; events</div></li>
+          <li><span class="avatar" aria-hidden="true">F</span><div><div class="nm">[FULL NAME]</div><div class="role">Art Director &middot; Design Lead</div></div><div class="lbl dom-l">Brand &amp; design</div></li>
+          <li><span class="avatar" aria-hidden="true">F</span><div><div class="nm">[FULL NAME]</div><div class="role">Open Source Editor &middot; Community Lead</div></div><div class="lbl dom-l">Open source &amp; outreach</div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 07 BECOME A MEMBER ================= -->
+  <section id="join" class="chap" aria-labelledby="c7-title">
+    <div class="wrap">
+      <header class="chap-head rv"><span class="lbl chap-no">07 / Become a Member</span><span class="lbl">P. 018</span></header>
+      <div class="join rv">
+        <div class="join-grid">
+          <div>
+            <h2 id="c7-title">Pull up a chair at the <em>workbench.</em></h2>
+            <p class="lede">Membership is open to students at every level, from first-time coders to seasoned builders. Bring curiosity; we will supply the problems, the projects and the people.</p>
+            <div class="cta-row">
+              <a class="btn btn-solid" href="#join" data-cursor="button">Become a Member <span aria-hidden="true">&rarr;</span></a>
+              <a class="btn" href="#top" data-cursor="button">Back to the cover <span aria-hidden="true">&uarr;</span></a>
+            </div>
+          </div>
+          <div>
+            <ul class="perks">
+              <li><b>i.</b><p>Weekly sessions, workshops and problem-solving evenings.</p></li>
+              <li><b>ii.</b><p>Project teams, mentors and honest code review.</p></li>
+              <li><b>iii.</b><p>Open-source practice and internship preparation.</p></li>
+            </ul>
+            <div class="meet">
+              <span class="lbl">Where &amp; when</span>
+              <dl><dt>Meets</dt><dd>[DAY &middot; TIME]</dd><dt>Venue</dt><dd>[VENUE]</dd><dt>Write to us</dt><dd>[EMAIL ADDRESS]</dd></dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ================= COLOPHON ================= -->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a class="brand" href="#top" aria-label="DEV Forge, back to top">
+            <svg class="mono-df" viewBox="0 0 64 64" role="img" aria-label="DF monogram">
+              <path class="m-d" d="M14 10H28A22 22 0 0 1 28 54H14Z"/>
+              <path class="m-f" d="M36 6V58M36 18H60M36 32H56"/>
+              <g clip-path="url(#dfWeave)"><path class="m-h" d="M14 10H28A22 22 0 0 1 28 54H14Z"/><path class="m-d" d="M14 10H28A22 22 0 0 1 28 54H14Z"/></g>
+              <rect class="m-g" x="10" y="59" width="12" height="2.5"/>
+            </svg>
+            <span class="wm">DEV <em>Forge</em></span>
+          </a>
+          <p>A vintage engineering journal built for the next generation of developers. Set in Playfair Display, DM Sans and IBM Plex Mono.</p>
+        </div>
+        <div>
+          <span class="lbl">Chapters</span>
+          <ul>
+            <li><a class="ul" href="#community">The Community</a></li>
+            <li><a class="ul" href="#expertise">Areas of Expertise</a></li>
+            <li><a class="ul" href="#journey">The Learning Journey</a></li>
+            <li><a class="ul" href="#projects">Selected Projects</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="lbl">Elsewhere</span>
+          <ul>
+            <li><a class="ul" href="#">GitHub</a></li>
+            <li><a class="ul" href="#">Instagram</a></li>
+            <li><a class="ul" href="#">Discord</a></li>
+            <li><a class="ul" href="#join">Join the Club</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-base"><span class="lbl">&copy; <span id="currentYear">2026</span> DEV Forge</span><span class="lbl">Vol. 01 / Est. 2026</span></div>
+    </div>
+  </footer>
+
+</div>
+<script src="script.js" defer></script>
+</body>
+</html>
